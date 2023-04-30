@@ -1,24 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
+import Header from './components/header';
+import { Routes, Route} from 'react-router-dom'
+import { Favorite } from './components/favorite';
 
-function App() {
+const PAGES_LIST = [
+  {
+    label:'Поиск Вакансий',
+    link:'search'
+  },
+  {
+    label:'Избранное',
+    link:'favorite'
+  }
+];
+
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <MantineProvider withGlobalStyles withNormalizeCSS>
+        <Header links={PAGES_LIST}/>
+          <Routes>
+          </Routes>
+      </MantineProvider>
   );
 }
 
