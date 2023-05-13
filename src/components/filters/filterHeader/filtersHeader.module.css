@@ -1,0 +1,25 @@
+* {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+.filterWrapper {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.label {
+  cursor:pointer;
+}
+
+.text {
+  font-weight: 700;
+  font-size:'1.25rem'
+}
+
+.buttonText {
+  font-size:'0.875rem'
+}

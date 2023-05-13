@@ -1,0 +1,28 @@
+* {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+.selectLabel {
+  margin-bottom:20px
+}
+
+.selectLabel path {
+  display:none;
+}
+
+.selectLabel svg {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../../../img/selectArrow.svg);
+}
+
+.selectLabel label {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.mantine-Select-dropdown {
+  background-color:red;
+}
