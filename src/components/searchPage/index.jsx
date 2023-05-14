@@ -7,7 +7,9 @@ const SearchPage = () => {
 
   return (
     <div className={styles.container}>
-      <Filters/>
+      <div className={styles.filters}>
+        <Filters/>
+      </div>
       <Vacations/>
     </div>
   );

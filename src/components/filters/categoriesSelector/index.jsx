@@ -20,8 +20,6 @@ export const CategoriesSelector = () => {
     }
   }, [])
   
-
-  console.log('catalogues', catalogues)
   const getCatalogues = async () => {
     try {
       const response = await axios.get(`${proxyUrl}/2.0/catalogues/`, requestConfig)
@@ -29,7 +27,7 @@ export const CategoriesSelector = () => {
       localStorage.setItem('localCatalogues', JSON.stringify(response.data))
     }
     catch (error) {
-      console.log(error)
+      console.error(error)
     }
   }
 

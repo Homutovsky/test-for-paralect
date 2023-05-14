@@ -1,14 +1,12 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { VacationCard } from './vacationCard';
-import styles from './vacationCards.module.css';
 import AppContext from '../../../appContext';
+import styles from './vacationCards.module.css';
 
 
 export const VacationCards = () => {
 
   const context = useContext(AppContext);
-
-  console.log('context', context)
   return (
     <>
       {context.vacancies.map(vacancy => <VacationCard vacancy={vacancy} />)}

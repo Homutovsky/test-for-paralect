@@ -20,6 +20,7 @@ export const SalaryInput = ({valueType, placeholder}) => {
 
   return (
       <NumberInput
+          className={styles.numberInput}
           placeholder={placeholder}
           value={filterForm[valueType]}
           onChange={onChange}

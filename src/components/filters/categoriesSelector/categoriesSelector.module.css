@@ -5,7 +5,11 @@
 }
 
 .selectLabel {
-  margin-bottom:20px
+  margin-bottom:20px;
+}
+
+.selectLabel input {
+  min-height:42px;
 }
 
 .selectLabel path {
@@ -21,6 +25,7 @@
 .selectLabel label {
   font-weight: 700;
   margin-bottom: 8px;
+  font-size: 16px;
 }
 
 .mantine-Select-dropdown {

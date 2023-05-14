@@ -1,18 +1,8 @@
-.buttonWrapper {
-  display:flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+.numberInput input {
+  min-height:42px;
 }
 
-.button {
-  border:none;
-  cursor:pointer;
-  background: transparent !important;
-  outline: 0 !important;
-  margin:0;
-  padding:0 12px !important;
+.text div {
+  font-weight: 700 !important;
+  font-size: 16px !important;
 }
-
-
-

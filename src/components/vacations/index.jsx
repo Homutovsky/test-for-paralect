@@ -1,7 +1,8 @@
 import React from 'react'
 import { SearchInput } from './searchInput'
-import styles from './vacations.module.css';
 import { VacationCards } from './vacationCards';
+import { PaginationItem } from './pagination';
+import styles from './vacations.module.css';
 
 
 export const Vacations = () => {
@@ -9,6 +10,7 @@ export const Vacations = () => {
     <div className={styles.vacationsWrapper}>
         <SearchInput />
         <VacationCards/>
+        <PaginationItem/>
     </div>
   )
 }
