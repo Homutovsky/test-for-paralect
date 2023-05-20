@@ -6,7 +6,9 @@
 
 .boxWrapper {
   min-width:315px;
-  width:100%;
+  align-self: flex-start;
+  position: sticky;
+  top: 76px;
   padding:20px;
   border-radius: 12px;
   background-color: #fff;
@@ -18,3 +20,4 @@
   width:100%;
   border-radius: 8px;;
 }
+

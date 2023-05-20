@@ -7,7 +7,10 @@ export const defaultContext = {
     catalogues:null,
     paymentFrom:'',
     paymentTo:''
-  }
+  },
+  totalPages:0,
+  isLoading:false,
+  keyword:''
 }
 
 const AppContext = createContext({})

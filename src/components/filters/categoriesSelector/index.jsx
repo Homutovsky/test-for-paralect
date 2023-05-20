@@ -22,8 +22,9 @@ export const CategoriesSelector = () => {
   
   const getCatalogues = async () => {
     try {
+      setContext({...context, isLoading:true});
       const response = await axios.get(`${proxyUrl}/2.0/catalogues/`, requestConfig)
-      setContext({...context, catalogues:response.data})
+      setContext({...context, catalogues:response.data, isLoading:false})
       localStorage.setItem('localCatalogues', JSON.stringify(response.data))
     }
     catch (error) {

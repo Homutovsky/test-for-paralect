@@ -1,11 +1,11 @@
-import './App.css';
-import { MantineProvider } from '@mantine/core';
+import { LoadingOverlay, MantineProvider } from '@mantine/core';
 import Header from './components/header';
 import { Routes, Route, Navigate} from 'react-router-dom'
 import { Favorite } from './components/favorite';
 import SearchPage from './components/searchPage';
 import AppContext, { defaultContext } from './appContext';
 import { useState } from 'react';
+import styles from './app.module.css'
 
 const PAGES_LIST = [
   {
@@ -25,12 +25,17 @@ export default function App() {
   return (
     <AppContext.Provider value={{...context, setContext}} >
       <MantineProvider withGlobalStyles withNormalizeCSS>
-        <Header links={PAGES_LIST}/>
-          <Routes>
-            <Route path={`/${PAGES_LIST[0].link}`} element={<SearchPage/>}/>
-            <Route path={`/${PAGES_LIST[1].link}`} element={<Favorite/>}/>
-            <Route path="*" element={<Navigate to={`/${PAGES_LIST[0].link}`} replace />} />
-          </Routes>
+        <div className={styles.app}>
+          <Header links={PAGES_LIST}/>
+          <div className={styles.appBody}>
+            <Routes>
+                <Route path={`/${PAGES_LIST[0].link}`} element={<SearchPage/>}/>
+                <Route path={`/${PAGES_LIST[1].link}`} element={<Favorite/>}/>
+                <Route path="*" element={<Navigate to={`/${PAGES_LIST[0].link}`} replace />} />
+            </Routes>
+          </div>
+          <LoadingOverlay className={styles.appOverlay} visible={context.isLoading} overlayOpacity={0.3}/>
+        </div>
       </MantineProvider>
     </AppContext.Provider>
     

@@ -1,0 +1,39 @@
+.container {
+  margin-bottom:0 !important;
+  position:fixed;
+  height:60px;
+  z-index: 100;
+}
+
+.header {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height:100%;
+  position:relative;
+  max-width:1120px;
+}
+
+.link {
+  display: block;
+  line-height: 1;
+  padding: 8px 30px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #495057;
+  font-size: 14px;
+  font-weight: 500,
+}
+
+.link:hover {
+  background-color: #f8f9fa;
+}
+
+.linkActive {
+  color:#228be6;
+}
+
+.logo {
+  position:absolute;
+  left:0
+}

@@ -1,7 +1,8 @@
 import axios from "axios";
 import { clientSecret, proxyUrl, requestConfig } from "../constants";
 
-const getVacancies = async ({accessKey, context, page = 0}) => {
+
+const getVacancies = async ({context, accessKey = '', page = 0}) => {
   const myAccessKey = localStorage.getItem("myAccessKey");
   const url = `${proxyUrl}/2.0/vacancies/`;
   const requestConfigWithAuth = {
@@ -12,19 +13,24 @@ const getVacancies = async ({accessKey, context, page = 0}) => {
       'X-Api-App-Id' : clientSecret
     },
     params: {
+      published:1,
+      keyword:context.keyword,
       catalogues:context.filterForm.catalogues,
       payment_from:+context.filterForm.paymentFrom,
       payment_to:+context.filterForm.paymentTo,
-      count:4,
+      count:100,
       page
     }
   }
+  context.setContext({...context, isLoading:true});
   const response = await axios.get(url, requestConfigWithAuth )
+
 
   context.setContext({
     ...context, 
     vacancies: response.data.objects,
-    totalPages: response.data.total / 4
+    totalPages: Math.ceil(response.data.total / 100),
+    isLoading:false
   })
 }
 

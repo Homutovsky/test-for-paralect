@@ -1,22 +1,12 @@
-.searchInputWrapper {
-  width:100%;
-  position:relative;
+.searchInput {
   margin-bottom:16px;
 }
 
-.searchInputWrapper input {
-  font-size: 14px;
-
-}
-
-.searchInput {
+.searchInput input {
   font-size: 14px;
 }
 
 .searchButton {
-  position: absolute;
-  left:678px;
-  top:9px;
   width:83px;
   height:32px;
 }

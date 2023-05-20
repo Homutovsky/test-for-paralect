@@ -1,0 +1,15 @@
+.appBody {
+  background-color:#F7F7F8;
+  padding-top: 100px;
+  flex:1;
+}
+
+.app {
+  display:flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.appOverlay {
+  position:fixed
+}
