@@ -17,7 +17,6 @@ export const PaginationItem = () => {
     }
   }
 
-  console.log('context.totalPages',context.totalPages)
   if(context.totalPages > 1) {
     return <Pagination
             className={styles.pagination}

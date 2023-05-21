@@ -1,5 +1,10 @@
 import { createContext } from 'react';
 
+const getVacancyIds = () => {
+  const favoriteVacancyIds = localStorage.getItem('favoriteVacancyIds')
+  return (favoriteVacancyIds ? favoriteVacancyIds.split(',') : [])
+}
+
 export const defaultContext = {
   catalogues:[],
   vacancies: [],
@@ -10,7 +15,10 @@ export const defaultContext = {
   },
   totalPages:0,
   isLoading:false,
-  keyword:''
+  keyword:'',
+  vacationWrapper:null,
+  favoriteVacancyIds: getVacancyIds(),
+  favoriteVacancies:[]
 }
 
 const AppContext = createContext({})

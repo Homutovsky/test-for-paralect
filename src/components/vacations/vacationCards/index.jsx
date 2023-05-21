@@ -9,7 +9,7 @@ export const VacationCards = () => {
   const context = useContext(AppContext);
   return (
     <>
-      {context.vacancies.map(vacancy => <VacationCard vacancy={vacancy} />)}
+      {context.vacancies.map(vacancy => <VacationCard  vacancy={vacancy} key={vacancy.id}/>)}
     </>
   )
 }

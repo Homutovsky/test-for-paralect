@@ -13,8 +13,6 @@ export const SearchInput = () => {
 
 
   const localCatalogues = localStorage.getItem('localCatalogues');
-  console.log('lolus', JSON.parse(localCatalogues))
-
 
   const onChange = (event) => {
     context.setContext({...context, keyword:event.target.value})

@@ -1,9 +1,8 @@
 import React, { useContext, useEffect } from 'react'
-import axios from 'axios'
-import styles from './categoriesSelector.module.css';
 import { Select } from '@mantine/core';
 import AppContext from '../../../appContext';
-import { proxyUrl, requestConfig } from '../../../constants';
+import getCatalogues from '../../../functions/getCatalogues'
+import styles from './categoriesSelector.module.css';
 
 
 export const CategoriesSelector = () => {
@@ -11,26 +10,16 @@ export const CategoriesSelector = () => {
   const context = useContext(AppContext);
   const {catalogues, setContext, filterForm} = context;
 
-  useEffect(() =>{
+  useEffect(() => {
     const localCatalogues = localStorage.getItem('localCatalogues');
     if(localCatalogues) {
       setContext({...context, catalogues:JSON.parse(localCatalogues)})
     } else {
-      getCatalogues()
+      getCatalogues(context)
     }
   }, [])
   
-  const getCatalogues = async () => {
-    try {
-      setContext({...context, isLoading:true});
-      const response = await axios.get(`${proxyUrl}/2.0/catalogues/`, requestConfig)
-      setContext({...context, catalogues:response.data, isLoading:false})
-      localStorage.setItem('localCatalogues', JSON.stringify(response.data))
-    }
-    catch (error) {
-      console.error(error)
-    }
-  }
+  
 
   const onChange = (e) => {
     setContext({
@@ -66,3 +55,4 @@ export const CategoriesSelector = () => {
       />
   )
 }
+

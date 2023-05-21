@@ -1,11 +1,16 @@
-import { Card, Text, ActionIcon } from '@mantine/core';
-import {ReactComponent as ButtonIcon} from '../../../../img/starIcon.svg';
+import { Card, Text, Button } from '@mantine/core';
+import {ReactComponent as UnSelectedStar } from '../../../../img/starIcon.svg';
+import {ReactComponent as SelectedStar } from '../../../../img/starIconBlue.svg';
 import {ReactComponent as DirectionIcon} from '../../../../img/directionIcon.svg';
+import { useContext, useEffect, useState } from 'react';
+import AppContext from '../../../../appContext';
 import styles from './vacationCard.module.css';
 
 
 export const VacationCard = ({vacancy = {}}) => {
-  const {profession, payment_from, payment_to, currency, type_of_work = {}, town = {}} = vacancy;
+  const context = useContext(AppContext);
+
+  const {profession, payment_from, payment_to, currency, type_of_work = {}, town = {}, id} = vacancy;
 
   const getPayment = () => {
     if(payment_from && payment_to) {
@@ -19,14 +24,29 @@ export const VacationCard = ({vacancy = {}}) => {
     }
     return `з/п не указана`
   }
+  const isFavoriteVacancy = context.favoriteVacancyIds.includes(id.toString())
+  
+  const toggleFavorite = () => {
+    let newFavoriteVacancyIds
+
+    if(isFavoriteVacancy) {
+      newFavoriteVacancyIds = context.favoriteVacancyIds.filter(favoriteId => favoriteId !== id.toString())
+    } else {
+      newFavoriteVacancyIds = context.favoriteVacancyIds? [...context.favoriteVacancyIds, id.toString()] : [id.toString()]
+    }
+
+    context.setContext({...context, favoriteVacancyIds:[...newFavoriteVacancyIds]})
+    
+    localStorage.setItem('favoriteVacancyIds', newFavoriteVacancyIds.join())
+  }
 
   return (
     <Card withBorder radius="md" className={styles.card}>
         <div className={styles.profession}>
           <Text c="blue" size="xl" fw={600}>{profession}</Text>
-          <ActionIcon component="a" href="" size="1.375rem">
-          <ButtonIcon/>
-        </ActionIcon>
+          <Button onClick={toggleFavorite} variant="subtle">
+            {isFavoriteVacancy ?  <SelectedStar/> : <UnSelectedStar/> }
+          </Button>
         </div>
         
         <div className={styles.description}>
