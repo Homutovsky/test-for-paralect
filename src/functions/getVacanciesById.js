@@ -1,7 +1,7 @@
 import axios from "axios"
 import { clientSecret, proxyUrl, requestConfig } from "../constants"
 
-const getVacancyRequests = (context) => {
+export const getVacancyRequests = (vacancyIds) => {
   const requestConfigWithAuth = {
     ...requestConfig,
     headers: {
@@ -9,12 +9,12 @@ const getVacancyRequests = (context) => {
       'X-Api-App-Id' : clientSecret
     }
   }
-  return  context.favoriteVacancyIds.map(id => 
+  return  vacancyIds.map(id => 
     axios.get(`${proxyUrl}/2.0/vacancies/${id}`, requestConfigWithAuth))
 }
 
 const requestVacancies = async (context) => {
-  const vacancyRequests = getVacancyRequests(context)
+  const vacancyRequests = getVacancyRequests(context.favoriteVacancyIds)
   return await axios.all(vacancyRequests).then(
     res => {
       return res.map(vacancy => vacancy.data)

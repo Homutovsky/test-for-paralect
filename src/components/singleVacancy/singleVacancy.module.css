@@ -1,0 +1,24 @@
+.vacationsWrapper {
+  max-width:773px;
+  width:100%;
+  margin:0 auto;
+}
+
+.text {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.singleTextPointer {
+  font-size: 28px;
+  color:black
+}
+
+.singleDescription {
+  margin-bottom: 16.5px;
+  align-items: flex-end;
+}
+
+.singlePayment {
+  font-size: 20px;
+}

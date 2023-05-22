@@ -1,4 +1,4 @@
-.profession {
+.professionWrapper {
   display:flex;
   flex-direction: row;
   align-items: center;
@@ -10,7 +10,6 @@
   display:flex;
   flex-direction: row;
   margin-bottom: 12.5px;
-
 }
 
 .payment::after {
@@ -38,4 +37,8 @@
 
 .favoritesBackground {
   background:yellow
+}
+
+.textPointer {
+  cursor:pointer;
 }
