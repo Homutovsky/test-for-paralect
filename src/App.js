@@ -33,7 +33,7 @@ export default function App() {
                 <Route path={`/${PAGES_LIST[0].link}`} element={<SearchPage/>}/>
                 <Route path={`/${PAGES_LIST[1].link}`} element={<Favorite/>}/>
                 <Route path={`/${PAGES_LIST[0].link}/:vacancyId`} element={<SingleVacancy/>} />
-                {/* <Route path="*" element={<Navigate to={`/${PAGES_LIST[0].link}`} replace />} /> */}
+                <Route path="*" element={<Navigate to={`/${PAGES_LIST[0].link}`} replace />} />
             </Routes>
           </div>
           <LoadingOverlay className={styles.appOverlay} visible={context.isLoading} overlayOpacity={0.3}/>

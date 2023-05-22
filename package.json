@@ -1,7 +1,7 @@
 {
   "name": "test-for-paralect",
   "version": "0.1.0",
-  "homepage": "https://Homutovsky.github.io/test-for-paralect",
+  "homepage": "https://Homutovsky.github.io/test-for-paralect#",
   "private": true,
   "dependencies": {
     "@mantine/core": "^6.0.9",

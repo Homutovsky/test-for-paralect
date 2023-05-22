@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { createStyles, Header as HeaderMantine, Container, Group,  rem } from '@mantine/core';
 import { NavLink, useLocation } from 'react-router-dom';
 import {ReactComponent as ReactLogo} from '../../img/logo.svg';

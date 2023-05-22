@@ -8,7 +8,7 @@ export const FavoriteDefaultPage = () => {
   const navigate = useNavigate()
   return (
     <div className={styles.wrapper}>
-      <Image maw={240} mx="auto" radius="md" src={emptyPageImage} alt="Random image" />
+      <Image maw={240} mx="auto" radius="md" src={emptyPageImage} alt="no results" />
       <Title size="24px">Упс, здесь еще ничего нет!</Title>
       <Button onClick={() => navigate(`/search`)} className={styles.button}>Поиск Вакансий</Button>
     </div>
