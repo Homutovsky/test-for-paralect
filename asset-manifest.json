@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/https//Homutovsky.github.io/test-for-paralect/static/css/main.f36a9b89.css",
+    "main.js": "/https//Homutovsky.github.io/test-for-paralect/static/js/main.81e5e7e3.js",
+    "static/media/logo.svg": "/https//Homutovsky.github.io/test-for-paralect/static/media/logo.132a7f6b9d326f9bb22cca4f0b6cb368.svg",
+    "static/media/starIconBlue.svg": "/https//Homutovsky.github.io/test-for-paralect/static/media/starIconBlue.f8afeaf853ff502df058b6abac64f889.svg",
+    "index.html": "/https//Homutovsky.github.io/test-for-paralect/index.html",
+    "static/media/starIcon.svg": "/https//Homutovsky.github.io/test-for-paralect/static/media/starIcon.540f30acf091809d244954593acb0eb2.svg",
+    "static/media/directionIcon.svg": "/https//Homutovsky.github.io/test-for-paralect/static/media/directionIcon.e773c0de5c7b766b78fb0781f1bb8d5d.svg",
+    "static/media/pointIcon.svg": "/https//Homutovsky.github.io/test-for-paralect/static/media/pointIcon.9753793324c982d49ef0.svg",
+    "static/media/selectArrow.svg": "/https//Homutovsky.github.io/test-for-paralect/static/media/selectArrow.0a65a3fce9c6155adeb8.svg",
+    "main.f36a9b89.css.map": "/https//Homutovsky.github.io/test-for-paralect/static/css/main.f36a9b89.css.map",
+    "main.81e5e7e3.js.map": "/https//Homutovsky.github.io/test-for-paralect/static/js/main.81e5e7e3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f36a9b89.css",
+    "static/js/main.81e5e7e3.js"
+  ]
+}
