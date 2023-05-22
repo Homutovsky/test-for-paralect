@@ -3,7 +3,7 @@ import { NumberInput } from '@mantine/core';
 import AppContext from '../../../../appContext';
 import styles from './salaryInput.module.css';
 
-export const SalaryInput = ({valueType, placeholder}) => {
+export const SalaryInput = ({valueType, placeholder, ...props}) => {
   const context = useContext(AppContext);
   const {catalogues, setContext, filterForm} = context;
 
@@ -26,6 +26,7 @@ export const SalaryInput = ({valueType, placeholder}) => {
           onChange={onChange}
           step={100}
           min={0}
+          {...props}
         />
   );
 }

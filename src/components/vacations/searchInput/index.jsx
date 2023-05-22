@@ -11,9 +11,6 @@ import styles from './searchInput.module.css';
 export const SearchInput = () => {
   const context = useContext(AppContext);
 
-
-  const localCatalogues = localStorage.getItem('localCatalogues');
-
   const onChange = (event) => {
     context.setContext({...context, keyword:event.target.value})
   }
@@ -31,6 +28,7 @@ const onSearch = () => {
 
   return (
       <Input
+          data-elem='search-input'
           onChange={onChange}
           className={styles.searchInput}
           icon={<IconSearch size={18} />}
@@ -40,6 +38,7 @@ const onSearch = () => {
           size="lg"
           rightSection={
             <Button
+              data-elem='search-button'
               className={styles.searchButton}
               onClick={onSearch}
               size="sm" radius="md">

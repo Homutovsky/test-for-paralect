@@ -38,6 +38,7 @@ export const CategoriesSelector = () => {
 
   return (
     <Select
+      data-elem='industry-select'
       data={data} 
       onChange={onChange}
       value={filterForm.catalogues}

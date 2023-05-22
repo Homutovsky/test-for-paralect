@@ -16,7 +16,7 @@ const Filters = () => {
             <FiltersHeader/>
             <CategoriesSelector/>
             <SalaryInputs/>
-            <Button onClick={()=> loadVacancies(context)} className={styles.submit} type="submit" mt="sm">
+            <Button data-elem='search-button' onClick={()=> loadVacancies(context)} className={styles.submit} type="submit" mt="sm">
               Применить
             </Button>
         </Box>

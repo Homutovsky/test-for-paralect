@@ -11,8 +11,8 @@ export const SalaryInputs = () => {
         size="md">
         Оклад
       </Text>
-      <SalaryInput valueType={'paymentFrom'} placeholder={'От'}/>
-      <SalaryInput valueType={'paymentTo'} placeholder={'До'}/>
+      <SalaryInput data-elem='salary-from-input' valueType={'paymentFrom'} placeholder={'От'}/>
+      <SalaryInput data-elem='salary-to-input' valueType={'paymentTo'} placeholder={'До'}/>
     </div>
   )
 }

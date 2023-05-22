@@ -46,10 +46,10 @@ export const VacationCard = ({vacancy = {}, newClassName = {}}) => {
   const {singleTextPointer, singleDescription, singlePayment} = newClassName
 
   return (
-    <Card withBorder radius="md" className={styles.card}>
+    <Card data-elem={`vacancy-${id}`} withBorder radius="md" className={styles.card}>
         <div className={professionWrapper}>
         <Text className={`${textPointer} ${singleTextPointer}`} onClick={() => { navigate(`/search/${id}`)}} c="blue" size="xl" fw={600}>{profession}</Text>
-          <Button onClick={toggleFavorite} variant="subtle">
+          <Button data-elem={`vacancy-${id}-shortlist-button`} onClick={toggleFavorite} variant="subtle">
             {isFavoriteVacancy ?  <SelectedStar/> : <UnSelectedStar/> }
           </Button>
         </div>
